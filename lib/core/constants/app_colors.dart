@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 
-/**
- * Palette de couleur de l'application SunuTask
- */
+/// Palette de couleur de l'application SunuTask
 class AppColors {
   AppColors._(); // Constructeur privé pour empecher l'instanciation
 
   //========= Couleurs principales ==============
   //
-  /**
-   * Le format hexadecimal se decompose ainsi:
-   * - 0x : Prefixe hexadecimale en Dart
-   * - FF: Opacite(FF =100%, 80 = 50%)
-   * - 293ED: Code couleur RGB(Rouge-Vert-Bleu)
-   */
+  /// Le format hexadecimal se decompose ainsi:
+  /// - 0x : Prefixe hexadecimale en Dart
+  /// - FF: Opacite(FF =100%, 80 = 50%)
+  /// - 293ED: Code couleur RGB(Rouge-Vert-Bleu)
   static const Color primary = Color(0xFF0293ED);
   static const Color primaryLight = Color(0xFF64BBF1);
   static const Color primaryDark = Color(0xFF03436D);

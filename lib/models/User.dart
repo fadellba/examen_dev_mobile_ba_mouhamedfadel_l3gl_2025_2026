@@ -1,7 +1,5 @@
-/**
- * Les modeles sont immutables(final) pour éviter les
- * modifications et facliter la gestion d'etat
- */
+/// Les modeles sont immutables(final) pour éviter les
+/// modifications et facliter la gestion d'etat
 class User {
   /// Identifiant unique de l'utilisateur (UUID)
  final String id;
@@ -27,10 +25,8 @@ class User {
    DateTime? createdAt,
 }) : createdAt = createdAt ?? DateTime.now();
 
- /**
-  * Crée une copie de l'utilisateur avec des champs modifies
-  * Ex: final updatedUser = user.copyWith(name: 'Babacar NDIAYE')
-  */
+ /// Crée une copie de l'utilisateur avec des champs modifies
+ /// Ex: final updatedUser = user.copyWith(name: 'Babacar NDIAYE')
  User copyWith({
    String? id,
    String? name,
@@ -49,10 +45,8 @@ class User {
    );
  }
 
- /**
-  * Convertir l'utilisateur en Map pour la serialisation
-  * Utile pour sauvegarder dans shared_preferences ou envoyer a une API
-  */
+ /// Convertir l'utilisateur en Map pour la serialisation
+ /// Utile pour sauvegarder dans shared_preferences ou envoyer a une API
  Map<String, dynamic> toMap() {
    return {
      'id': id,
@@ -64,9 +58,7 @@ class User {
    };
  }
 
- /**
-  * Créer un utilisateur à l'aide du constructeur factory depuis un Map
-  */
+ /// Créer un utilisateur à l'aide du constructeur factory depuis un Map
  factory User.fromMap(Map<String, dynamic> map) {
    return User(
        id: map['id'] as String,

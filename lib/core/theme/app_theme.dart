@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sunu_task/core/constants/app_colors.dart';
 
-/**
- * ThemeData est la classe qui définit l'apparence globale de l'application :
- * - Couleurs
- * - Typographie
- * - Styles des composants (buttonTheme, inputDecorationTheme)
- */
+/// ThemeData est la classe qui définit l'apparence globale de l'application :
+/// - Couleurs
+/// - Typographie
+/// - Styles des composants (buttonTheme, inputDecorationTheme)
 class AppTheme {
   AppTheme._();
 

@@ -1,9 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-/**
- * Pattern Singleton:
- * Pour avoir une seule instance
- */
+/// Pattern Singleton:
+/// Pour avoir une seule instance
 class StorageService {
   //===== Singleton ==========
   /// Instance Unique (privee)
@@ -19,14 +17,12 @@ class StorageService {
   StorageService._();
 
   //===== SharedPreferences ==========
-  /**
-   * SharedPreferences utilise des opérations asynchrones
-   * car il lit/ecrtit sur le disque
-   *
-   * Le mot-cle await attend que l'operation se termine
-   * La fonction doit etre marque async et retourner un Future
-   * Les variables doivent être marqué par late
-   */
+  /// SharedPreferences utilise des opérations asynchrones
+  /// car il lit/ecrtit sur le disque
+  ///
+  /// Le mot-cle await attend que l'operation se termine
+  /// La fonction doit etre marque async et retourner un Future
+  /// Les variables doivent être marqué par late
   late SharedPreferences _prefs;
 
   /// Indicateur d'initialisation

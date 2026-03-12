@@ -1,11 +1,9 @@
-/**
- * Texte de l'application SunuTask
- *
- * Centrenliser les textes permet de:
- *  - Faciliter la traduction (i18n)
- *  - Eviter les fautes de frappe
- *  - Modifier facilement les textes
- */
+/// Texte de l'application SunuTask
+///
+/// Centrenliser les textes permet de:
+///  - Faciliter la traduction (i18n)
+///  - Eviter les fautes de frappe
+///  - Modifier facilement les textes
 class AppStrings {
   AppStrings._();
 
