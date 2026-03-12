@@ -61,7 +61,7 @@ class User {
      'password': password,
      'avatar': avatar,
      //'createdAt': createdAt
-     'createdAt': createdAt?.toIso8601String(),
+     'createdAt': createdAt.toIso8601String(),
    };
  }
 

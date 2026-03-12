@@ -4,7 +4,6 @@ import 'package:uuid/uuid.dart';
 import '../../models/project.dart';
 import '../../providers/project_provider.dart';
 import '../../providers/auth_provider.dart';
-import '../../widgets/cards/project_card.dart';
 
 class ProjectFormScreen extends StatefulWidget {
   final Project? project;
