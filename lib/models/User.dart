@@ -15,7 +15,7 @@ class User {
 
  final DateTime createdAt;
 
- /// Constructeur
+ /// Constructeur (Le mouleur)
  User({
    required this.id,
    required this.name,
@@ -25,8 +25,11 @@ class User {
    DateTime? createdAt,
 }) : createdAt = createdAt ?? DateTime.now();
 
+ /// Le tolier
  /// Crée une copie de l'utilisateur avec des champs modifies
  /// Ex: final updatedUser = user.copyWith(name: 'Babacar NDIAYE')
+ /// Permet de faire la mjr sans passer par les setters
+ /// utiliser par le provider pour mettre a jour la vue
  User copyWith({
    String? id,
    String? name,
@@ -38,14 +41,17 @@ class User {
    return User(
        id: id ?? this.id,
        name: name ?? this.name,
-       email: email ?? this.name,
-       password: password ?? this.name,
+       email: email ?? this.email,
+       password: password ?? this.password,
        avatar: avatar ?? this.avatar,
        createdAt: createdAt ?? this.createdAt
    );
  }
 
- /// Convertir l'utilisateur en Map pour la serialisation
+ /// les douaniers
+
+ /// L'Exportateur (Serilisation)
+ /// C'est une methode qui transforme ton objet complexe en un dictionnaire (Map<String, dynamic>).
  /// Utile pour sauvegarder dans shared_preferences ou envoyer a une API
  Map<String, dynamic> toMap() {
    return {
@@ -54,19 +60,24 @@ class User {
      'email': email,
      'password': password,
      'avatar': avatar,
-     'createdAt': createdAt
+     //'createdAt': createdAt
+     'createdAt': createdAt?.toIso8601String(),
    };
  }
 
- /// Créer un utilisateur à l'aide du constructeur factory depuis un Map
+ /// L'Importateur (Deserilisation)
+ /// C'est un constructeur "factory".
+ /// Il prend une Map reçue du stockage et tente de reconstruire l'objet Dart.
  factory User.fromMap(Map<String, dynamic> map) {
    return User(
-       id: map['id'] as String,
-       name: map['name'] as String,
-       email: map['email'] as String,
-       password: map['password'] as String,
-       avatar: map['avatar'] as String,
-       createdAt: DateTime.parse(map['createdAt'] as String)
+     id: map['id']?.toString() ?? '',
+     name: map['name']?.toString() ?? 'Utilisateur',
+     email: map['email']?.toString() ?? '',
+     password: map['password']?.toString() ?? '',
+     avatar: map['avatar']?.toString(),
+     createdAt: map['createdAt'] != null
+         ? DateTime.tryParse(map['createdAt'].toString())
+         : null,
    );
  }
 
