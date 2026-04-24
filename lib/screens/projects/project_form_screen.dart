@@ -43,7 +43,12 @@ class _ProjectFormScreenState extends State<ProjectFormScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
+              TextFormField(
+                initialValue: _name,
+                decoration: const InputDecoration(labelText: "Titre"),
+                maxLines: 3,
+                onChanged: (v) => setState(() => _description = v),
+              ),
               TextFormField(
                 initialValue: _description,
                 decoration: const InputDecoration(labelText: "Description"),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sunu_task/core/constants/app_colors.dart';
 import '../../providers/auth_provider.dart';
-import '../../providers/project_provider.dart'; // AJOUTÉ
-import '../../providers/task_provider.dart';    // AJOUTÉ
+import '../../providers/project_provider.dart';
+import '../../providers/task_provider.dart';
 import 'tabs/dashboard_tab.dart';
 import 'tabs/projects_tab.dart';
 import 'tabs/tasks_tab.dart';

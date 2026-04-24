@@ -3,7 +3,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:sunu_task/services/storage_service.dart';
-
+/*
+Sachant que c'est dans les providers
+que l'on gere la logique metier de notre
+app et que les widgets vont se servir
+des providers pour savoir quant est ce qu'ils
+doivent se reconstruire, a chaque fois
+que les donnees changes au niveau des providers,
+ces derniers doivent le communiquer au widgets.
+Pour ce faire la classe ChangeNotifier joue
+le role d'alarme et notifiListener le button
+de l'alarme.
+*/
   class AppProvider extends ChangeNotifier {
     final StorageService _storage = StorageService.instance;
 
@@ -33,7 +44,7 @@ import 'package:sunu_task/services/storage_service.dart';
 
     Future<void> completeOnboarding() async {
       _isOnboardingComplete = true;
-      await _storage.setOnboardingComplete(true);
+      await _storage.setOnboardingComplete(_isOnboardingComplete);
       notifyListeners();
     } // Marque l'onboarding comme terminé
 

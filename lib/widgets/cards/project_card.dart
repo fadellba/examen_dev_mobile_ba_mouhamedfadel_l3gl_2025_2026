@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../models/project.dart';
 import '../../core/constants/app_colors.dart';
-
+/*
+On va mettre en place des widgets reutilisables
+car nos ecrans vont en avoir besoin pour le ui
+cela va nous permettre aussi de ne pas repeter du code
+ */
 class ProjectCard extends StatelessWidget {
   final Project project;
   final VoidCallback onTap;
@@ -74,7 +78,7 @@ class ProjectCard extends StatelessWidget {
                         value: 'delete',
                         child: ListTile(
                           leading: Icon(Icons.delete, color: AppColors.error, size: 20),
-                          title: Text('Supprimer', style: TextStyle(color: Colors.red)),
+                          title: Text('Supprimer', style: TextStyle(color: AppColors.error)),
                           contentPadding: EdgeInsets.zero,
                         ),
                       ),
